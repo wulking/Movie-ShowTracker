@@ -16,7 +16,7 @@ A native macOS/Linux desktop app for tracking movies and TV shows you've watched
 - **Watchlist** — Track what you want to watch next, with a **"Surprise Me"** random picker
 - **Stats** — Viewing analytics: genre breakdown, rating distribution, watched-by-year, and your top-rated favorites
 - **Recommendations** — Personalized suggestions based on your highest-rated titles (excludes items already in your library or watchlist)
-- **Half-Star Ratings** — Click-to-save star ratings with 0.5 increments
+- **Ratings** — Click-to-save star ratings
 - **Quick Actions** — Add to Watched or Watchlist directly from any poster
 - **Dynamic Theming** — Upload any image as the app background; accent colors are automatically extracted to generate a matching palette
 - **Export / Import** — Back up your entire library as JSON; restore on any device
