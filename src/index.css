@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: 16 185 129;
+  --accent-light: 110 231 183;
+  --fr-midnight: 8 15 12;
+  --fr-deep: 12 22 18;
+  --fr-dark: 16 29 23;
+  --fr-surface: 24 45 35;
+  --fr-card: 28 51 41;
+  --fr-elevated: 34 61 48;
+  --fr-border: 43 77 60;
+  --fr-border-light: 58 99 80;
+  --fr-muted: 74 115 96;
+  --fr-subtle: 106 148 128;
+  --fr-text: 143 181 162;
+  --fr-text-light: 188 216 202;
+  --fr-light: 220 238 228;
+  --bg-url: url("/bg.png");
+}
+
+body {
+  margin: 0;
+  background: rgb(var(--fr-midnight));
+  color: rgb(var(--fr-light));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", sans-serif;
+  overflow: hidden;
+  user-select: none;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(
+      180deg,
+      rgb(var(--fr-midnight) / 0.78) 0%,
+      rgb(var(--fr-midnight) / 0.45) 35%,
+      rgb(var(--fr-midnight) / 0.40) 55%,
+      rgb(var(--fr-midnight) / 0.65) 80%,
+      rgb(var(--fr-midnight) / 0.88) 100%
+    ),
+    var(--bg-url);
+  background-size: 100% 100%, cover;
+  background-position: center, center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 30% 70%,
+      rgb(var(--accent) / 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 70% 25%,
+      rgb(var(--accent-light) / 0.04) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 60% 60%,
+      rgb(var(--accent) / 0.03) 0%,
+      transparent 40%
+    );
+  animation: ambientShift 30s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes ambientShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(1%, -0.5%);
+  }
+  100% {
+    transform: translate(-0.5%, 1%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--fr-deep) / 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--accent) / 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--accent) / 0.45);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@layer utilities {
+  .glass {
+    background: rgb(var(--fr-dark) / 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-light {
+    background: rgb(var(--fr-surface) / 0.5);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
